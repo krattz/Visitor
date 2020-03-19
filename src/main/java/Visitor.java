@@ -41,7 +41,6 @@ public class Visitor {
 
     }
     public static void main(String[] args) throws FileNotFoundException {
-//        File myObj = new File("VisitorLog.txt");
         Visitor Carlo = new Visitor("Carlo","Maranino",LocalDate.now(),LocalTime.now(),"Okay","Bibi");
         Carlo.save();
         Carlo.load("Carlo Maranino");
@@ -51,7 +50,7 @@ public class Visitor {
             String FileName = "visitor_"+this.fullName.toLowerCase()+".txt";
         try {
             FileWriter myWriter = new FileWriter(FileName);
-            myWriter.write("First Name: "+" Last Name: " + this.lastName+" Date: "+date+" time: "+time +" Comments: "+this.comments+ " Assisted By: "+this.assistedBy);
+            myWriter.write("First Name: "+firstName+"\nLast Name: " + this.lastName+"\nDate: "+date+"\nTime: "+time +"\nComments: "+this.comments+ "\nAssisted By: "+this.assistedBy);
             myWriter.close();
             logger.debug("Successfully wrote to the file.");
         } catch (IOException e) {
